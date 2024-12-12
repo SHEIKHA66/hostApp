@@ -11,8 +11,4 @@ export const userSchemaValidation = yup.object().shape({
     .string()
     .oneOf([yup.ref("password"), null], "Passwords Don't Match")
     .required(),
-  number: yup.number("input must be a number").required("number is required"),
-  note: yup.string().required("note is required"),
-  date: yup.date().required("date is required"),
-  time: yup.string().required("time is required"),
 });

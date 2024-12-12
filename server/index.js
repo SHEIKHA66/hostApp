@@ -343,13 +343,13 @@ app.post("/saveHostelData", async (req, res) => {
   }
 });
 
+const port = ENV.PORT || 3001;
+app.listen(port, () => {
+  console.log(`You are connected at port: ${port}`);
+});
+
 /*
 app.listen(3001, () => {
   console.log("you are connected");
 });
 */
-
-const port = ENV.PORT || 3001;
-app.listen(port, () => {
-  console.log(`You are connected at port: ${port}`);
-});

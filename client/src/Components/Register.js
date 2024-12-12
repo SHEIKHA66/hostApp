@@ -50,6 +50,7 @@ const Register = () => {
     }
   };
 
+  /*
   const handleDelete = (email) => {
     dispatch(deleteStud(email));
   };
@@ -63,6 +64,8 @@ const Register = () => {
     dispatch(updateStud(studData));
   };
 
+
+  */
   return (
     <Container fluid>
       <Row className="formrow">
