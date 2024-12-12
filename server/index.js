@@ -10,13 +10,17 @@ import bcrypt from "bcrypt";
 import AdminModel from "./Models/AdminModel.js";
 import ModelStudent from "./Models/Student.js";
 import HostelModel from "./Models/HostelModel.js";
+
+import * as ENV from "./config.js";
+
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-const connectString =
-  "mongodb+srv://admin:admin123456@housinginfosys.msiveop.mongodb.net/housDb?retryWrites=true&w=majority";
+// const connectString ="mongodb+srv://admin:admin123456@housinginfosys.msiveop.mongodb.net/housDb?retryWrites=true&w=majority";
+
+const connectString = `mongodb+srv://${ENV.DB_USER}:${ENV.DB_PASSWORD}@${ENV.DB_CLUSTER}/${ENV.DB_NAME}?retryWrites=true&w=majority`;
 mongoose.connect(connectString, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -339,6 +343,13 @@ app.post("/saveHostelData", async (req, res) => {
   }
 });
 
+/*
 app.listen(3001, () => {
   console.log("you are connected");
+});
+*/
+
+const port = ENV.PORT || 3001;
+app.listen(port, () => {
+  console.log(`You are connected at port: ${port}`);
 });

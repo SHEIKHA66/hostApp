@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import * as ENV from "../config";
 
 const initialState = {
   notes: [],
@@ -44,7 +45,9 @@ const noteSlice = createSlice({
 
 export const saveNote = createAsyncThunk("notes/saveNote", async (noteData) => {
   try {
-    const response = await axios.post("http://localhost:3001/saveNote ", {
+    //const response = await axios.post("http://localhost:3001/saveNote ", {
+
+    const response = await axios.post(`${ENV.SERVER_URL}/saveNote `, {
       noteMsg: noteData.noteMsg,
       email: noteData.email,
     });
@@ -57,7 +60,9 @@ export const saveNote = createAsyncThunk("notes/saveNote", async (noteData) => {
 
 export const getNotes = createAsyncThunk("note/getNotes", async () => {
   try {
-    const response = await axios.get("http://localhost:3001/getNotes");
+    // const response = await axios.get("http://localhost:3001/getNotes");
+
+    const response = await axios.get(`${ENV.SERVER_URL}/getNotes`);
     return response.data.notes;
     console.log(response);
   } catch (error) {

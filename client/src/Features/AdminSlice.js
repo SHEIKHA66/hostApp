@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { StudsData } from "../Exampledata";
+import * as ENV from "../config";
 
 const initialState = {
   value: StudsData,
@@ -16,7 +17,9 @@ export const registerAdmin = createAsyncThunk(
   "admins/registerAdmin",
   async (studData, { rejectWithValue }) => {
     try {
-      const response = await axios.post("http://localhost:3001/registerAdmin", {
+      //   const response = await axios.post("http://localhost:3001/registerAdmin", {
+
+      const response = await axios.post(`${ENV.SERVER_URL}/registerAdmin`, {
         name: studData.name,
         email: studData.email,
         password: studData.password,
@@ -35,7 +38,9 @@ export const loginad = createAsyncThunk(
   "admins/loginad",
   async (studData, { rejectWithValue }) => {
     try {
-      const response = await axios.post("http://localhost:3001/loginad", {
+      //const response = await axios.post("http://localhost:3001/loginad", {
+
+      const response = await axios.post(`${ENV.SERVER_URL}/loginad`, {
         email: studData.email,
         password: studData.password,
       });
@@ -53,7 +58,9 @@ export const logoutad = createAsyncThunk(
   "admins/logoutad",
   async (_, { rejectWithValue }) => {
     try {
-      await axios.post("http://localhost:3001/logoutad");
+      //await axios.post("http://localhost:3001/logoutad");
+
+      await axios.post(`${ENV.SERVER_URL}/logoutad`);
       return true;
     } catch (error) {
       return rejectWithValue(error.response?.data?.message || "Logout failed");
