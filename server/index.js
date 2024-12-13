@@ -22,7 +22,8 @@ app.use(express.json());
 //mongodb+srv://${ENV.DB_USER}:${ENV.DB_PASSWORD}@${ENV.DB_CLUSTER}/${ENV.DB_NAME}?retryWrites=true&w=majority
 
 // mongodb+srv://admin:<db_password>@housinginfosys.msiveop.mongodb.net/?retryWrites=true&w=majority&appName=housinginfosys
-const connectString = `mongodb+srv://${ENV.DB_USER}:${ENV.DB_PASSWORD}@${ENV.DB_CLUSTER}/${ENV.DB_NAME}?retryWrites=true&w=majority&appName=housinginfosys`;
+// mongodb+srv://${ENV.DB_USER}:${ENV.DB_PASSWORD}@${ENV.DB_CLUSTER}/${ENV.DB_NAME}?retryWrites=true&w=majority&appName=housinginfosys`
+const connectString = `mongodb+srv://${ENV.DB_USER}:${ENV.DB_PASSWORD}@${ENV.DB_CLUSTER}/${ENV.DB_NAME}?retryWrites=true&w=majority`;
 mongoose.connect(connectString, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
