@@ -42,7 +42,7 @@ const Header = () => {
             </Link>
           </NavItem>
           <NavItem>
-            <Link to="/registerA">RRRRRiii</Link>
+            <Link to="/registerA">RRRRR</Link>
           </NavItem>
           <NavItem>
             <Link to="/both">BOTH</Link>

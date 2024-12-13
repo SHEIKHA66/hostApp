@@ -1,7 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { StudsData } from "../Exampledata";
 import axios from "axios";
-import * as ENV from "../config";
 
 const initialState = {
   //value: StudsData,
@@ -16,11 +15,8 @@ export const registerStud = createAsyncThunk(
   "studs/registerStud",
   async (studData) => {
     try {
-      //sends a Notes request to the server along the request body object
-
-      //const response = await axios.post("http://localhost:3001/registerStud", {
-
-      const response = await axios.post(`${ENV.SERVER_URL}/registerStud`, {
+      //sends a POST request to the server along the request body object
+      const response = await axios.post("http://localhost:3001/registerStud", {
         name: studData.name,
         email: studData.email,
         password: studData.password,
@@ -36,9 +32,7 @@ export const registerStud = createAsyncThunk(
 
 export const login = createAsyncThunk("studs/login", async (studData) => {
   try {
-    // const response = await axios.post("http://localhost:3001/login", {
-
-    const response = await axios.post(`${ENV.SERVER_URL}/login`, {
+    const response = await axios.post("http://localhost:3001/login", {
       email: studData.email,
       password: studData.password,
     });
@@ -55,10 +49,8 @@ export const login = createAsyncThunk("studs/login", async (studData) => {
 
 export const logout = createAsyncThunk("studs/logout", async () => {
   try {
-    //send a request to your server to log the student out
-    //const response = await axios.post("http://localhost:3001/logout");
-
-    const response = await axios.post(`${ENV.SERVER_URL}/logout`);
+    //send a request to your server to log the user out
+    const response = await axios.post("http://localhost:3001/logout");
   } catch (error) {}
 });
 

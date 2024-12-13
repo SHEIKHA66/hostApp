@@ -49,7 +49,7 @@ const RegisterAdmin = () => {
       };
       console.log("Form Data", data); // You can handle the form submission here
       alert("Validation all good!");
-      //use the useDispatch hook to dispatch an action, passing as paramater the userData
+      //dispatch(addUser(userData)); //use the useDispatch hook to dispatch an action, passing as paramater the userData
       dispatch(registerAdmin(studData));
       navigate("/adminpage"); //redirect to login component
     } catch (error) {
@@ -76,8 +76,8 @@ const RegisterAdmin = () => {
         <p>
           Welcome, <strong>{adminn.name}</strong>!
         </p>
+        <h1>Add New Admain</h1>
       </div>
-      <h1>Add Admin</h1>
 
       <Row className="formrow">
         <Col className="columndiv1" lg="6">
@@ -183,5 +183,17 @@ export default RegisterAdmin;
           </table>
         </Col>
       </Row>
+
+
+      ......
+
+<div className="form-header">
+        <p>
+          Welcome, <strong>{adminn.name}</strong>!
+        </p>
+      </div>
+      <h1>Add Admin</h1>
+
+      ......
 
       */
