@@ -49,7 +49,7 @@ const RegisterAdmin = () => {
       };
       console.log("Form Data", data); // You can handle the form submission here
       alert("Validation all good!");
-      //dispatch(addUser(userData)); //use the useDispatch hook to dispatch an action, passing as paramater the userData
+      //use the useDispatch hook to dispatch an action, passing as paramater the userData
       dispatch(registerAdmin(studData));
       navigate("/adminpage"); //redirect to login component
     } catch (error) {

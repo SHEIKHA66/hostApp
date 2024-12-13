@@ -13,8 +13,10 @@ import {
   updateStud,
   registerStud,
 } from "../Features/StudSlice";
+import { Link } from "react-router-dom";
 
 const Register = () => {
+  //Retrieve the current value of the state and assign to it a variable
   const studList = useSelector((state) => state.studs.value);
 
   const [name, setname] = useState("");
@@ -22,9 +24,10 @@ const Register = () => {
   const [password, setpassword] = useState("");
   const [confirmPassword, setconfirmPassword] = useState("");
 
+  //For form validation using react-hook-form
   const {
     register,
-    handleSubmit,
+    handleSubmit, // Submit the form when this is called
     formState: { errors },
   } = useForm({
     resolver: yupResolver(userSchemaValidation),
@@ -33,6 +36,7 @@ const Register = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  // Handle form submission
   const onSubmit = (data) => {
     try {
       const studData = {
@@ -40,11 +44,12 @@ const Register = () => {
         email: data.email,
         password: data.password,
       };
-      console.log("Form Data", data);
+      console.log("Form Data", data); // You can handle the form submission here
       alert("Validation all good!");
-      dispatch(addStud(studData));
+      //use the useDispatch hook to dispatch an action, passing as paramater the userData
+      //dispatch(addStud(studData));
       dispatch(registerStud(studData));
-      navigate("/login");
+      navigate("/both"); //redirect to login component
     } catch (error) {
       console.log("Error.");
     }
@@ -131,6 +136,11 @@ const Register = () => {
         </Col>
         <Col className="columndiv2" lg="6"></Col>
       </Row>
+      <div>
+        <Link to={`/both`} className="nav-link">
+          <button className="btn btn-success">Previous</button>
+        </Link>
+      </div>
     </Container>
   );
 };

@@ -71,9 +71,6 @@ const AdminPage = () => {
           <div className="card">
             <img src={admin} className="card-img-top" alt="..." />
             <div className="card-body">
-              <button type="button" class="btn btn-warning">
-                <Link to="/registerA">Write Notes</Link>
-              </button>
               <a href="/registerA" className="btn btn-warning">
                 Add New Admin
               </a>
