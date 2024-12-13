@@ -19,8 +19,10 @@ app.use(cors());
 app.use(express.json());
 
 // const connectString ="mongodb+srv://admin:admin123456@housinginfosys.msiveop.mongodb.net/housDb?retryWrites=true&w=majority";
+//mongodb+srv://${ENV.DB_USER}:${ENV.DB_PASSWORD}@${ENV.DB_CLUSTER}/${ENV.DB_NAME}?retryWrites=true&w=majority
 
-const connectString = `mongodb+srv://${ENV.DB_USER}:${ENV.DB_PASSWORD}@${ENV.DB_CLUSTER}/${ENV.DB_NAME}?retryWrites=true&w=majority`;
+// mongodb+srv://admin:<db_password>@housinginfosys.msiveop.mongodb.net/?retryWrites=true&w=majority&appName=housinginfosys
+const connectString = `mongodb+srv://${ENV.DB_USER}:${ENV.DB_PASSWORD}@${ENV.DB_CLUSTER}/${ENV.DB_NAME}?retryWrites=true&w=majority&appName=housinginfosys`;
 mongoose.connect(connectString, {
   useNewUrlParser: true,
   useUnifiedTopology: true,

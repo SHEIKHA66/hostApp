@@ -84,7 +84,7 @@ export const AdminSlice = createSlice({
     updateStud: (state, action) => {
       state.value = state.value.map((admin) =>
         admin.email === action.payload.email
-          ? { ...admin, ...action.payload } // Update matching user
+          ? { ...admin, ...action.payload } // Update matching stud
           : admin
       );
     },

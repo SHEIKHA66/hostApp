@@ -20,7 +20,7 @@ const noteSlice = createSlice({
       .addCase(saveNote.fulfilled, (state, action) => {
         console.log(action.payload);
         state.status = "succeeded";
-        // Update the state with fetched posts adding the latest post in the beginning
+        // Update the state with fetched notes adding the latest notes in the beginning
         state.notes.unshift(action.payload);
       })
       .addCase(saveNote.rejected, (state, action) => {
@@ -32,7 +32,7 @@ const noteSlice = createSlice({
       })
       .addCase(getNotes.fulfilled, (state, action) => {
         state.status = "succeeded";
-        // Update the state with fetched posts
+        // Update the state with fetched notes
         console.log(action.payload);
         state.notes = action.payload;
       })
