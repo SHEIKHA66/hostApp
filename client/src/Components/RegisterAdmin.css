@@ -1,0 +1,109 @@
+/* RegisterAdmin.css */
+
+/* General Styles */
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f7fa; /* Light gray background */
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 2.5em; /* Larger heading */
+  color: #343a40; /* Dark text color */
+}
+
+/* Header Styling */
+.form-header {
+  text-align: center;
+  margin-bottom: 30px;
+  background-color: #ffffff; /* White background for header */
+  padding: 15px;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.form-header p {
+  font-size: 1.2em;
+  color: #495057; /* Slightly lighter text */
+}
+
+/* Form Styles */
+.formrow {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.div-form {
+  background-color: #ffffff; /* White background for form */
+  padding: 20px;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Deeper shadow for depth */
+  width: 100%; /* Full width on small screens */
+  max-width: 600px; /* Max width for larger screens */
+}
+
+.form-group {
+  margin-bottom: 20px; /* Space between form groups */
+}
+
+.form-control {
+  width: 100%; /* Full width input */
+  padding: 12px; /* Padding for input */
+  border: 1px solid #ced4da; /* Light border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 1em; /* Font size for inputs */
+  transition: border-color 0.3s; /* Smooth border color change */
+}
+
+.form-control:focus {
+  border-color: #80bdff; /* Blue border on focus */
+  outline: none; /* Remove default outline */
+}
+
+/* Error Message Styling */
+.error {
+  color: #dc3545; /* Bootstrap danger color for errors */
+  font-size: 0.875em; /* Smaller font for error messages */
+  margin-top: 5px; /* Space above error message */
+}
+
+/* Button Styling */
+.button {
+  width: 100%; /* Full-width button */
+  padding: 12px; /* Padding for button */
+  background-color: #007bff; /* Bootstrap primary color */
+  color: white; /* White text */
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+}
+
+.button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Link Styling */
+.nav-link {
+  text-decoration: none; /* Remove underline */
+}
+
+.nav-link button {
+  margin-top: 20px; /* Space above button */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .div-form {
+    padding: 15px; /* Less padding on small screens */
+  }
+
+  h1 {
+    font-size: 2em; /* Smaller heading */
+  }
+}

@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { login } from "../Features/StudSlice.js";
 //import logo from "../Images/logo-t.png";
+//import "./Login.css";
 
 const Login = () => {
   const [email, setemail] = useState();
@@ -40,9 +41,9 @@ const Login = () => {
 
   return (
     <div>
-      <Container>
+      <Container className="mylogin">
         <h1>Login as Student</h1>
-        <Form>
+        <Form className="Log">
           <Row>
             <Col md={3}></Col>
           </Row>

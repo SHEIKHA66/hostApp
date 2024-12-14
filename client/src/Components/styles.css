@@ -1,0 +1,70 @@
+/* styles.css */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa; /* Light background for contrast */
+}
+
+h1 {
+  text-align: center;
+  color: #333; /* Dark text color for header */
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.userImage {
+  display: block;
+  margin: 0 auto; /* Center the image */
+  border-radius: 50%; /* Circle image */
+  width: 100px; /* Fixed width */
+  height: 100px; /* Fixed height */
+}
+
+.container {
+  background-color: #fff; /* White background for container */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Padding inside the container */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.nav-link {
+  text-decoration: none; /* Remove underline from link */
+}
+
+.btn {
+  display: block;
+  width: 100%; /* Full width button */
+  margin-top: 20px; /* Space above button */
+}
+
+.btn-success {
+  background-color: #28a745; /* Bootstrap success color */
+  border: none; /* No border */
+  color: white; /* White text */
+  font-weight: bold; /* Bold text */
+}
+
+.btn-success:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .userImage {
+    width: 80px; /* Smaller image on mobile */
+    height: 80px; /* Smaller image on mobile */
+  }
+
+  h1 {
+    font-size: 1.5em; /* Smaller font size on mobile */
+  }
+
+  .btn {
+    margin-top: 15px; /* Adjust margin for mobile */
+  }
+}

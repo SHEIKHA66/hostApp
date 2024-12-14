@@ -9,6 +9,8 @@ import note from "../Images/note.jpeg";
 import schedual from "../Images/schedual.jpeg";
 import info from "../Images/info.jpeg";
 import cal from "../Images/call.jpeg";
+import loc from "../Images/loc.jpeg";
+import host from "../Images/host.jpeg";
 
 import { logout } from "../Features/StudSlice.js";
 
@@ -33,12 +35,6 @@ const StudPage = () => {
         <p>
           Welcome, <strong>{stud.name}</strong>!
         </p>
-      </div>
-
-      <div>
-        <button type="button" class="btn btn-outline-danger">
-          <Link onClick={handleLogout}>Logout</Link>
-        </button>
       </div>
 
       <Row>
@@ -118,7 +114,39 @@ const StudPage = () => {
             </div>
           </div>
         </Col>
+
+        <Col md={3}>
+          <div className="card">
+            <img src={loc} className="card-img-top" alt="..." />
+            <div className="card-body">
+              <h5 className="card-title"></h5>
+
+              <button type="button" class="btn btn-warning">
+                <Link to="/loc">your Location</Link>
+              </button>
+            </div>
+          </div>
+        </Col>
+
+        <Col md={3}>
+          <div className="card">
+            <img src={host} className="card-img-top" alt="..." />
+            <div className="card-body">
+              <h5 className="card-title"></h5>
+
+              <button type="button" class="btn btn-warning">
+                <Link to="/">About our Hostel</Link>
+              </button>
+            </div>
+          </div>
+        </Col>
       </Row>
+
+      <div>
+        <button type="button" class="btn btn-outline-danger">
+          <Link onClick={handleLogout}>Logout</Link>
+        </button>
+      </div>
     </div>
   );
 };

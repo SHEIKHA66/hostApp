@@ -4,10 +4,14 @@ import { useEffect } from "react";
 import pic1 from "./66.jpg";
 import pic2 from "./2.jpg";
 import pic3 from "./44.jpg";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const email = useSelector((state) => state.studs.stud.email);
   const navigate = useNavigate();
+
+  const stud = useSelector((state) => state.studs.stud); // Logged-in user details
+
   /*
   useEffect(() => {
     if (!email) {
@@ -17,11 +21,12 @@ const Home = () => {
 */
   return (
     <div className="home-container ">
-      <header className="header">
-        <h1>Welcome to</h1>
-        <h2>Housing Administration for Female Students</h2>
-      </header>
-
+      <div className="form-header">
+        <h2>Hostel Form</h2>
+        <p>
+          Welcome, <strong>{stud.name}</strong>
+        </p>
+      </div>
       <div className="content">
         <aside className="sidebar">
           <div className="card">
@@ -124,6 +129,11 @@ const Home = () => {
             </button>
           </div>
         </main>
+      </div>
+      <div>
+        <Link to={`/studpage`} className="nav-link">
+          <button className="btn btn-success">Previous</button>
+        </Link>
       </div>
     </div>
   );

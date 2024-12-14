@@ -15,11 +15,12 @@ import {
 } from "../Features/AdminSlice.js";
 
 import { useNavigate } from "react-router-dom";
+import "./RegisterAdmin.css";
 
 const RegisterAdmin = () => {
   const adminn = useSelector((state) => state.admins.admin); // Logged-in user details
   //Retrieve the current value of the state and assign to it a variable
-  const studList = useSelector((state) => state.admins.value);
+  const adminList = useSelector((state) => state.admins.value);
 
   //create the state variables
   const [name, setname] = useState("");
@@ -142,6 +143,7 @@ const RegisterAdmin = () => {
         </Col>
         <Col className="columndiv2" lg="6"></Col>
       </Row>
+
       <div>
         <Link to={`/adminpage`} className="nav-link">
           <button className="btn btn-success">Previous</button>

@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
+import "./Location.css";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 const Location = () => {
   const [ip, setIp] = useState(null); // State to hold the IP address
   const [geoData, setGeoData] = useState(null); // State to hold geolocation
+  const stud = useSelector((state) => state.studs.stud); // Logged-in user details
 
   // Fetch the IP address dynamically
   const fetchIpAddress = async () => {
@@ -41,6 +44,12 @@ const Location = () => {
   }, [ip]);
   return (
     <div className="location">
+      <h1>Location</h1>
+      <div className="form-header">
+        <p>
+          Welcome, <strong>{stud.name}</strong>!
+        </p>
+      </div>
       <br />
       <br />
       {ip ? <p>IP Address: {ip}</p> : <p>Loading IP address...</p>}
@@ -53,6 +62,12 @@ const Location = () => {
       ) : (
         <p>Loading Geolocation Data...</p>
       )}
+      <br></br>
+      <div>
+        <Link to={`/studpage`} className="nav-link">
+          <button className="btn btn-success">Previous</button>
+        </Link>
+      </div>
     </div>
   );
 };

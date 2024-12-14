@@ -32,20 +32,21 @@ const Header = () => {
   return (
     <>
       <Navbar className="header">
+        <header className="header">
+          <h1>Welcome to</h1>
+          <h2>Housing Administration for Female Students</h2>
+        </header>
         <Nav>
           <NavItem>
+            <Link to="/both">Login</Link>
+          </NavItem>
+
+          <NavItem>
+            <Link to="/dev">Developers</Link>
+          </NavItem>
+
+          <NavItem>
             <img src={logo} className="logo" />
-          </NavItem>
-          <NavItem>
-            <Link to="/">
-              <FaHome id="/" />
-            </Link>
-          </NavItem>
-          <NavItem>
-            <Link to="/registerA">RRRRRiii</Link>
-          </NavItem>
-          <NavItem>
-            <Link to="/both">BOTH</Link>
           </NavItem>
         </Nav>
       </Navbar>
@@ -56,6 +57,13 @@ const Header = () => {
 export default Header;
 
 /*
+
+
+ <NavItem>
+            <Link to="/">
+              <FaHome id="/" />
+            </Link>
+          </NavItem>
 
    <NavItem>
             <Link onClick={handleLogoutad}>LogoutAd</Link>

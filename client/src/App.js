@@ -31,6 +31,9 @@ import ManageStudent from "./Components/Managestud";
 import UpdateStudent from "./Components/UpdateStudent";
 import ViewStud from "./Components/ViewStud";
 import HostelForm from "./Components/HostelForm";
+import Location from "./Components/Location";
+import DevelopersPage from "./Components/Developer";
+
 const App = () => {
   return (
     <Container>
@@ -59,10 +62,12 @@ const App = () => {
             <Route path="/loginad" element={<Loginad />}></Route>
             <Route path="/both" element={<Both />}></Route>
             <Route path="/view" element={<ViewStud />}></Route>
+            <Route path="/loc" element={<Location />}></Route>
 
             <Route path="/studdata" element={<Studentdata />}></Route>
             <Route path="/managestud" element={<ManageStudent />}></Route>
             <Route path="/hostel" element={<HostelForm />}></Route>
+            <Route path="/dev" element={<DevelopersPage />}></Route>
 
             <Route path="/rooms" element={<ShowingRoom />}></Route>
             <Route path="/update/:Sid" element={<UpdateBustiming />}></Route>

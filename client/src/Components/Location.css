@@ -1,0 +1,46 @@
+/* Location.css */
+
+/* General Styles */
+.location {
+  max-width: 600px; /* Maximum width for the location container */
+  margin: 40px auto; /* Center the container with top margin */
+  padding: 20px; /* Padding around the container */
+  background-color: #f9f9f9; /* Light gray background for the container */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  text-align: center; /* Center align text */
+}
+
+.location p {
+  font-size: 1.2em; /* Larger font size for paragraphs */
+  color: #333; /* Darker text color */
+  margin: 10px 0; /* Space between paragraphs */
+}
+
+.location div {
+  font-size: 1.1em; /* Slightly smaller font for location details */
+  color: #007bff; /* Primary color for location details */
+  margin: 5px 0; /* Space above and below location details */
+}
+
+.location br {
+  margin-bottom: 10px; /* Space between line breaks */
+}
+
+/* Loading States */
+.location .loading {
+  color: #ff9800; /* Orange color for loading text */
+  font-weight: bold; /* Bold loading text */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .location {
+    padding: 15px; /* Less padding on small screens */
+  }
+
+  .location p,
+  .location div {
+    font-size: 1em; /* Smaller font size for mobile */
+  }
+}

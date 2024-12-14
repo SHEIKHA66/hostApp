@@ -7,6 +7,7 @@ import Notes from "./Notes";
 import { Link } from "react-router-dom";
 
 import Location from "./Location";
+import "./styles.css";
 
 const Stud = () => {
   //const email = useSelector((state) => state.studs.stud.email);
@@ -25,15 +26,6 @@ const Stud = () => {
       </div>
 
       <Container>
-        <img src={user} className="userImage" />
-        <p>{name}</p>
-
-        <p>{email}</p>
-        <Row>
-          <Col md={3}>
-            <Location />
-          </Col>
-        </Row>
         <br></br>
         <Row>
           <Col md={9}>
@@ -57,3 +49,13 @@ const Stud = () => {
 };
 
 export default Stud;
+
+/*
+
+   <Row>
+          <Col md={3}>
+            <Location />
+          </Col>
+        </Row>
+
+*/

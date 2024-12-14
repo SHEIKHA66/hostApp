@@ -1,0 +1,54 @@
+/* Notes.css */
+
+/* General Styles */
+.postsContainer {
+  max-width: 800px; /* Maximum width for the notes container */
+  margin: 20px auto; /* Centering the container */
+  padding: 20px; /* Padding around the container */
+  background-color: #ffffff; /* White background for the container */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+h1 {
+  text-align: center; /* Center align the heading */
+  color: #343a40; /* Dark text color */
+  margin-bottom: 20px; /* Space below the heading */
+}
+
+/* Table Styles */
+.table {
+  width: 100%; /* Full width table */
+  border-collapse: collapse; /* Collapse borders */
+}
+
+.table th,
+.table td {
+  padding: 12px; /* Padding for table cells */
+  text-align: left; /* Left align text in cells */
+  border-bottom: 1px solid #dee2e6; /* Bottom border for rows */
+}
+
+.table th {
+  background-color: #f8f9fa; /* Light background for header */
+  color: #495057; /* Lighter text color for header */
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f2f2f2; /* Light gray for odd rows */
+}
+
+.table-striped tbody tr:hover {
+  background-color: #e9ecef; /* Slightly darker gray on hover */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .postsContainer {
+    padding: 15px; /* Less padding on small screens */
+  }
+
+  h1 {
+    font-size: 1.8em; /* Smaller heading */
+  }
+}

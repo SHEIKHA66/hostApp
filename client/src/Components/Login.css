@@ -1,0 +1,14 @@
+/* Login.css */
+
+.mylogin {
+  border: 1px solid #ccc; /* Border color */
+  padding: 20px; /* Space inside the border */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #fff; /* Background color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow */
+  width: 3000px; /* Fixed width for the form */
+}
+
+.Log {
+  align-items: center;
+}

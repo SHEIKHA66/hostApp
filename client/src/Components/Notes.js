@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { getNotes } from "../Features/NoteSlice";
 import { Table } from "reactstrap";
 import moment from "moment";
-
+import "./Notes.css";
 const Notes = () => {
   const notes = useSelector((state) => state.notes.notes);
   const email = useSelector((state) => state.admins.admin.email); //  const email = useSelector((state) => state.studs.stud.email);
@@ -22,7 +22,10 @@ const Notes = () => {
     <div className="postsContainer">
       <h1>Important Note</h1>
       <Table className="table table-striped">
-        <thead></thead>
+        <thead>
+          <th>Email</th>
+          <th>Note</th>
+        </thead>
 
         <tbody>
           {notes.map((note) => (
