@@ -8,17 +8,16 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   const email = useSelector((state) => state.studs.stud.email);
-  const navigate = useNavigate();
 
   const stud = useSelector((state) => state.studs.stud); // Logged-in user details
+  const navigate = useNavigate();
 
-  /*
   useEffect(() => {
     if (!email) {
-      navigate("/login");
+      navigate("/both");
     }
   }, [email, navigate]);
-*/
+
   return (
     <div className="home-container ">
       <div className="form-header">
