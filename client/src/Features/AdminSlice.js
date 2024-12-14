@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { StudsData } from "../Exampledata";
+import * as ENV from "../config";
 
 const initialState = {
   value: StudsData,
@@ -16,6 +17,8 @@ export const registerAdmin = createAsyncThunk(
   "admins/registerAdmin",
   async (studData, { rejectWithValue }) => {
     try {
+      //   const response = await axios.post("http://localhost:3001/registerAdmin", {
+
       const response = await axios.post("http://localhost:3001/registerAdmin", {
         name: studData.name,
         email: studData.email,
@@ -35,6 +38,8 @@ export const loginad = createAsyncThunk(
   "admins/loginad",
   async (studData, { rejectWithValue }) => {
     try {
+      //const response = await axios.post("http://localhost:3001/loginad", {
+
       const response = await axios.post("http://localhost:3001/loginad", {
         email: studData.email,
         password: studData.password,
@@ -53,6 +58,8 @@ export const logoutad = createAsyncThunk(
   "admins/logoutad",
   async (_, { rejectWithValue }) => {
     try {
+      //await axios.post("http://localhost:3001/logoutad");
+
       await axios.post("http://localhost:3001/logoutad");
       return true;
     } catch (error) {
@@ -77,7 +84,7 @@ export const AdminSlice = createSlice({
     updateStud: (state, action) => {
       state.value = state.value.map((admin) =>
         admin.email === action.payload.email
-          ? { ...admin, ...action.payload } // Update matching user
+          ? { ...admin, ...action.payload } // Update matching stud
           : admin
       );
     },

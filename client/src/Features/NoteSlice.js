@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import * as ENV from "../config";
 
 const initialState = {
   notes: [],
@@ -19,7 +20,7 @@ const noteSlice = createSlice({
       .addCase(saveNote.fulfilled, (state, action) => {
         console.log(action.payload);
         state.status = "succeeded";
-        // Update the state with fetched posts adding the latest post in the beginning
+        // Update the state with fetched notes adding the latest notes in the beginning
         state.notes.unshift(action.payload);
       })
       .addCase(saveNote.rejected, (state, action) => {
@@ -31,7 +32,7 @@ const noteSlice = createSlice({
       })
       .addCase(getNotes.fulfilled, (state, action) => {
         state.status = "succeeded";
-        // Update the state with fetched posts
+        // Update the state with fetched notes
         console.log(action.payload);
         state.notes = action.payload;
       })
@@ -44,6 +45,8 @@ const noteSlice = createSlice({
 
 export const saveNote = createAsyncThunk("notes/saveNote", async (noteData) => {
   try {
+    //const response = await axios.post("http://localhost:3001/saveNote ", {
+
     const response = await axios.post("http://localhost:3001/saveNote ", {
       noteMsg: noteData.noteMsg,
       email: noteData.email,
@@ -57,6 +60,8 @@ export const saveNote = createAsyncThunk("notes/saveNote", async (noteData) => {
 
 export const getNotes = createAsyncThunk("note/getNotes", async () => {
   try {
+    // const response = await axios.get("http://localhost:3001/getNotes");
+
     const response = await axios.get("http://localhost:3001/getNotes");
     return response.data.notes;
     console.log(response);

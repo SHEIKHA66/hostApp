@@ -37,6 +37,15 @@ const Both = () => {
             <a href="/register" class="btn btn-primary">
               Sing Up
             </a>
+            <div>
+              <Navbar>
+                <Nav>
+                  <NavItem>
+                    <Link to="/register">tttttt</Link>
+                  </NavItem>
+                </Nav>
+              </Navbar>
+            </div>
           </div>
         </div>
       </div>
