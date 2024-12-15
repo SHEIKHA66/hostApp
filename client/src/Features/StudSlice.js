@@ -18,9 +18,8 @@ export const registerStud = createAsyncThunk(
     try {
       //sends a Notes request to the server along the request body object
 
-      //const response = await axios.post("http://localhost:3001/registerStud", {
-
-      const response = await axios.post("http://localhost:3001/registerStud", {
+      const response = await axios.post(`${ENV.SERVER_URL}/registerStud`, {
+        //const response = await axios.post("http://localhost:3001/registerStud", {
         name: studData.name,
         email: studData.email,
         password: studData.password,
@@ -36,9 +35,8 @@ export const registerStud = createAsyncThunk(
 
 export const login = createAsyncThunk("studs/login", async (studData) => {
   try {
-    // const response = await axios.post("http://localhost:3001/login", {
-
-    const response = await axios.post("http://localhost:3001/login", {
+    const response = await axios.post(`${ENV.SERVER_URL}/login`, {
+      //const response = await axios.post("http://localhost:3001/login", {
       email: studData.email,
       password: studData.password,
     });
@@ -57,9 +55,9 @@ export const logout = createAsyncThunk("studs/logout", async () => {
   try {
     //send a request to your server to log the student out
     //const response = await axios.post("http://localhost:3001/logout");
-    //const response = await axios.post(`${ENV.SERVER_URL}/logout`);
+    const response = await axios.post(`${ENV.SERVER_URL}/logout`);
 
-    const response = await axios.post("http://localhost:3001/logout");
+    //const response = await axios.post("http://localhost:3001/logout");
   } catch (error) {}
 });
 

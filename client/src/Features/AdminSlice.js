@@ -17,9 +17,8 @@ export const registerAdmin = createAsyncThunk(
   "admins/registerAdmin",
   async (studData, { rejectWithValue }) => {
     try {
-      //   const response = await axios.post("http://localhost:3001/registerAdmin", {
-
-      const response = await axios.post("http://localhost:3001/registerAdmin", {
+      const response = await axios.post(`${ENV.SERVER_URL}/registerAdmin`, {
+        // const response = await axios.post("http://localhost:3001/registerAdmin", {
         name: studData.name,
         email: studData.email,
         password: studData.password,
@@ -39,8 +38,7 @@ export const loginad = createAsyncThunk(
   async (studData, { rejectWithValue }) => {
     try {
       //const response = await axios.post("http://localhost:3001/loginad", {
-
-      const response = await axios.post("http://localhost:3001/loginad", {
+      const response = await axios.post(`${ENV.SERVER_URL}/loginad`, {
         email: studData.email,
         password: studData.password,
       });
@@ -60,7 +58,7 @@ export const logoutad = createAsyncThunk(
     try {
       //await axios.post("http://localhost:3001/logoutad");
 
-      await axios.post("http://localhost:3001/logoutad");
+      await axios.post(`${ENV.SERVER_URL}/logoutad`);
       return true;
     } catch (error) {
       return rejectWithValue(error.response?.data?.message || "Logout failed");

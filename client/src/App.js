@@ -23,7 +23,7 @@ import AdminPage from "./Components/AdminPage";
 import ShareNotes from "./Components/ShareNote";
 import Notes from "./Components/Notes";
 import Loginad from "./Components/Loginad";
-import Adpage from "./Components/Adpage";
+import Adpage from "./Components/Adpageold";
 import RegisterAdmin from "./Components/RegisterAdmin";
 import Both from "./Components/Bothe";
 import Studentdata from "./Components/Studentdata";
