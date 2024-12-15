@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import * as ENV from "../config";
 
 const ViewStud = () => {
   const adminn = useSelector((state) => state.admins.admin); // Logged-in user details
@@ -10,7 +11,9 @@ const ViewStud = () => {
   const [countRecords, setcountRecords] = useState(0);
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/managestud")
+    //Axios.get("http://localhost:3001/managestud")
+
+    Axios.get(`${ENV.SERVER_URL}/managestud`)
       .then((response) => {
         setlistOfStudents(response.data.students);
         setcountRecords(response.data.count);

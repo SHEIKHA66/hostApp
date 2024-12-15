@@ -7,6 +7,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Container, Row, Col, Form } from "reactstrap";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import * as ENV from "../config";
 
 const Studentdata = () => {
   const stud = useSelector((state) => state.studs.stud); // Logged-in user details
@@ -31,7 +32,8 @@ const Studentdata = () => {
   };
 
   const addStudent = () => {
-    Axios.post("http://localhost:3001/addStudent", {
+    Axios.post(`${ENV.SERVER_URL}/addStudent`, {
+      //  Axios.post("http://localhost:3001/addStudent", {
       studId: studId,
       studName: studName,
       email: email,

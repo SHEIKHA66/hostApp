@@ -3,6 +3,7 @@ import Axios from "axios";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 import { useSelector } from "react-redux";
+import * as ENV from "../config";
 
 const ManageStudent = () => {
   const adminn = useSelector((state) => state.admins.admin); // Logged-in user details
@@ -11,7 +12,8 @@ const ManageStudent = () => {
   const [countRecords, setcountRecords] = useState(0);
 
   const deleteStudent = async (id) => {
-    Axios.delete(`http://localhost:3001/deletes/${id}`).then((response) => {
+    Axios.delete(`${ENV.SERVER_URL}/deletes/${id}`).then((response) => {
+      // Axios.delete(`http://localhost:3001/deletes/${id}`).then((response) => {
       setlistOfStudents(
         listOfStudents.filter((val) => {
           return val._id != id;
@@ -24,7 +26,9 @@ const ManageStudent = () => {
   };
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/managestud")
+    Axios.get(`${ENV.SERVER_URL}/managestud`)
+
+      //Axios.get("http://localhost:3001/managestud")
       .then((response) => {
         setlistOfStudents(response.data.students);
         setcountRecords(response.data.count);

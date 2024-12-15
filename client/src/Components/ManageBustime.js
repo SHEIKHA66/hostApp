@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import * as ENV from "../config";
 
 const ManageBustiming = () => {
   const adminn = useSelector((state) => state.admins.admin); // Logged-in user details
@@ -10,7 +11,8 @@ const ManageBustiming = () => {
   const [countRecords, setcountRecords] = useState(0);
 
   const deleteBus = async (id) => {
-    Axios.delete(`http://localhost:3001/delete/${id}`).then((response) => {
+    Axios.delete(`${ENV.SERVER_URL}/delete/${id}`).then((response) => {
+      //Axios.delete(`http://localhost:3001/delete/${id}`).then((response) => {
       setlistOfBus(
         listOfBus.filter((val) => {
           return val._id != id;
@@ -23,7 +25,8 @@ const ManageBustiming = () => {
   };
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/manage")
+    Axios.get(`${ENV.SERVER_URL}/manage`)
+      //Axios.get("http://localhost:3001/manage")
       .then((response) => {
         setlistOfBus(response.data.buses);
         setcountRecords(response.data.count);

@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 import "./HostelForm.css"; // Import external CSS for styling
 import { Link } from "react-router-dom";
+import * as ENV from "../config";
 
 const HostelForm = () => {
   const stud = useSelector((state) => state.studs.stud); // Logged-in user details
@@ -26,7 +27,10 @@ const HostelForm = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3001/saveHostelData",
+        `${ENV.SERVER_URL}/saveHostelData`,
+
+        //const response = await axios.post(
+        //"http://localhost:3001/saveHostelData",
         {
           name: stud.name,
           email: stud.email,

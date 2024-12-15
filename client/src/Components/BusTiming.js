@@ -2,6 +2,8 @@ import Axios from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import * as ENV from "../config";
+
 const BusTiming = () => {
   const adminn = useSelector((state) => state.admins.admin); // Logged-in user details
 
@@ -14,7 +16,8 @@ const BusTiming = () => {
   const [responseMsg, setresponseMsg] = useState("");
 
   const addBus = () => {
-    Axios.post("http://localhost:3001/addBus", {
+    Axios.post(`${ENV.SERVER_URL}/addBus`, {
+      //Axios.post("http://localhost:3001/addBus", {
       busId: busId,
       day: day,
       busFi: busFi,

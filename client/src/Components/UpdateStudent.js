@@ -3,6 +3,8 @@ import Axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import * as ENV from "../config";
+
 const UpdateStudent = () => {
   const [studId, setstudId] = useState("");
   const [studName, setstudName] = useState("");
@@ -14,7 +16,9 @@ const UpdateStudent = () => {
   let { Sid } = useParams();
 
   const updateStudent = () => {
-    Axios.put(`http://localhost:3001/updates/${Sid}`, {
+    //Axios.put(`http://localhost:3001/updates/${Sid}`, {
+
+    Axios.put(`${ENV.SERVER_URL}/updates/${Sid}`, {
       studId: studId,
       studName: studName,
       email: email,
@@ -30,7 +34,9 @@ const UpdateStudent = () => {
   };
 
   useEffect(() => {
-    Axios.get(`http://localhost:3001/getStudent/${Sid}`)
+    // Axios.get(`http://localhost:3001/getStudent/${Sid}`)
+
+    Axios.get(`${ENV.SERVER_URL}/getStudent/${Sid}`)
       .then((response) => {
         setstudId(response.data.result.studId);
         setstudName(response.data.result.studName);
